@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SignIn</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="form-section">
+        <div class="heading-section">
+          <h2>Welcome,</h2>
+          <h2>we're thrilled to have you join us!</h2>
+        </div>
+        <div class="heading-message-container">
+          Get a <span class="marked">14-DAY FREE ACCESS</span> to information on
+          provider, services, resources, support, and trusted family reviews.
+        </div>
+        <form id="signinForm">
+          <div class="form-group">
+            <label class="form-label" for="email">
+              Kindly provide your personal email address
+            </label>
+            <input
+              required
+              id="email"
+              type="email"
+              placeholder="e.g. zara_s@microsoft.com"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">
+              Please enter your first name
+            </label>
+            <input
+              required
+              id="firstName"
+              type="text"
+              placeholder="e.g. Zara"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email"> Your last name </label>
+            <input
+              required
+              id="lastName"
+              type="text"
+              placeholder="e.g. Sterling"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">
+              Create a strong password
+            </label>
+            <div class="input-wrapper">
+              <input
+                required
+                id="password"
+                type="password"
+                class="form-control"
+                placeholder="Must be at least 8 characters."
+              />
+              <div class="password-visibility-label">
+                <div class="visibily-badge show-password">
+                  <img
+                    class="eye-icon"
+                    src="./aseets/icons/eye.svg"
+                    alt="eye icon"
+                  />
+                </div>
+                <div class="visibily-badge hide-password">
+                  <img
+                    class="eye-slash-icon"
+                    src="./aseets/icons/eye-slash.svg"
+                    alt="eye icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="sign-in-button">Sign In</button>
+        </form>
+        <div class="sign-in-text-container">
+          Already have an account?
+          <a class="sign-in-text" href="/sign-in" class="ms-link-3">
+            Sign in here
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

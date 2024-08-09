@@ -1,0 +1,276 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Font Face */
+@font-face {
+  font-family: "Calibri";
+  src: url("../aseets/fonts/calibri/calibri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables */
+:root {
+  --color-black: #333;
+  --color-white-smoke: #f4f9f9;
+  --color-border: rgb(214, 236, 228);
+  --color-field-bg: #fbfcfc;
+  --color-field-placeholder: rgb(189, 220, 209);
+  --color-primary-dark: teal;
+  --color-primary-light: rgb(214, 236, 228);
+  --color-primary: rgb(8, 156, 156);
+}
+
+/* Base Styles */
+html {
+  font-size: 17px;
+}
+
+@media (min-width: 400px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Calibri", sans-serif;
+}
+
+/* Container */
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100%;
+}
+
+/* Form Section */
+.form-section {
+  max-width: 790px;
+  padding: 30px;
+}
+
+@media (min-width: 400px) {
+  .form-section {
+    padding: 36px;
+  }
+}
+
+/* Heading Section */
+.heading-section {
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.heading-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  margin: 0;
+}
+
+@media (min-width: 400px) {
+  .heading-section h2 {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+.heading-message-container {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-black);
+  background-color: var(--color-white-smoke);
+  text-align: center;
+  letter-spacing: -0.025em;
+  border-radius: 20px;
+  width: auto;
+  margin: 0 0 20px;
+  padding: 20px;
+}
+
+.heading-message-container .marked {
+  color: var(--color-primary);
+}
+
+@media (min-width: 400px) {
+  .heading-message-container {
+    font-size: 26px;
+  }
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  color: var(--color-black);
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+}
+
+@media (min-width: 350px) and (max-width: 399px) {
+  .form-label {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 400px) {
+  .form-label {
+    font-size: 20px;
+  }
+}
+
+/* Input Wrapper */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Form Control */
+input.form-control {
+  background-color: var(--color-field-bg);
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 5px 5px -5px #0000001a;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  min-height: 44px;
+  outline: none;
+  padding: 8px 12px;
+
+  transition: box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  width: 100%;
+
+  @media (min-width: 400px) {
+    font-size: 20px;
+  }
+}
+
+input.form-control#password {
+  padding-right: 50px; /* Space for the visibility toggle */
+}
+
+input.form-control::placeholder {
+  color: var(--color-field-placeholder);
+  font-size: 14px;
+
+  @media (min-width: 400px) {
+    font-size: 20px;
+  }
+}
+
+input.form-control:hover,
+input.form-control:focus {
+  border-color: var(--color-primary);
+  border-width: 2px;
+  box-shadow: 0 10px 10px -5px #0000001a;
+}
+
+/* Password Label */
+.password-label {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 400px) {
+  .password-label {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Password Visibility Label */
+.password-visibility-label {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.visibily-badge {
+  display: none;
+  background: var(--color-primary-light);
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 3px 10px;
+  text-transform: capitalize;
+  position: absolute;
+  left: -30px;
+  top: -20px;
+}
+
+input[type="password"] ~ .password-visibility-label .show-password {
+  display: flex;
+}
+
+input[type="text"] ~ .password-visibility-label .hide-password {
+  display: flex;
+}
+
+.visibily-badge img {
+  width: 16px;
+  object-fit: contain;
+}
+
+/* Sign In Button */
+.sign-in-button {
+  background-color: var(--color-primary-dark);
+  border-radius: 30px;
+  border: 1.6px solid var(--color-primary-dark);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin-top: 15px;
+  padding: 16px;
+  transition: 0.4s ease;
+  width: 100%;
+}
+
+.sign-in-button:hover,
+.sign-in-button:active {
+  background: #fff;
+  color: var(--color-primary-dark);
+}
+
+/* Sign In Text Container */
+.sign-in-text-container {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+/* Sign In Text */
+.sign-in-text {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.sign-in-text:hover,
+.sign-in-text:visited:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+@media (min-width: 400px) {
+  .sign-in-text-container {
+    font-size: 20px;
+  }
+}
