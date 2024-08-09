@@ -1,3 +1,4 @@
+/* General Reset */
 *,
 *::before,
 *::after {
@@ -22,6 +23,7 @@
   --color-primary-dark: teal;
   --color-primary-light: rgb(214, 236, 228);
   --color-primary: rgb(8, 156, 156);
+  --color-checkbox-border: #ccc;
 }
 
 /* Base Styles */
@@ -52,7 +54,7 @@ body {
 /* Form Section */
 .form-section {
   max-width: 790px;
-  padding: 30px;
+  padding: 36px 27px;
 }
 
 @media (min-width: 400px) {
@@ -69,9 +71,9 @@ body {
 }
 
 .heading-section h2 {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 700;
-  line-height: 31px;
+  line-height: 35px;
   margin: 0;
 }
 
@@ -150,11 +152,12 @@ input.form-control {
   min-height: 44px;
   outline: none;
   padding: 8px 12px;
-
   transition: box-shadow 0.2s, color 0.2s, border-color 0.2s;
   width: 100%;
+}
 
-  @media (min-width: 400px) {
+@media (min-width: 400px) {
+  input.form-control {
     font-size: 20px;
   }
 }
@@ -166,8 +169,10 @@ input.form-control#password {
 input.form-control::placeholder {
   color: var(--color-field-placeholder);
   font-size: 14px;
+}
 
-  @media (min-width: 400px) {
+@media (min-width: 400px) {
+  input.form-control::placeholder {
     font-size: 20px;
   }
 }
@@ -228,6 +233,106 @@ input[type="text"] ~ .password-visibility-label .hide-password {
   object-fit: contain;
 }
 
+/* Terms and Condition Section */
+.terms-and-condition-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.terms-section {
+  display: flex;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-checkbox-border);
+  border-radius: 33%;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox:hover {
+  background-color: rgb(244, 244, 244);
+  border-color: var(--color-primary);
+}
+
+.checkbox#allowEmails {
+  width: 38px;
+  height: 20px;
+}
+
+@media (min-width: 360px) {
+  .checkbox#allowEmails {
+    width: 32px !important ;
+  }
+}
+
+@media (min-width: 418px) {
+  .checkbox#allowEmails {
+    width: 29px !important ;
+  }
+}
+
+@media (min-width: 490px) {
+  .checkbox#allowEmails {
+    width: 23px !important ;
+  }
+}
+
+@media (min-width: 576px) {
+  .checkbox#allowEmails {
+    width: 20px !important;
+  }
+}
+
+input[type="checkbox"]:checked + .checkbox {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  color: var(--color-black);
+}
+
+label a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+label a:hover {
+  text-decoration: underline;
+}
+
+/* recaptcha */
+.recaptcha-container {
+  max-width: 200px; /* Set the max width */
+  transform: scale(0.77); /* Scale the reCAPTCHA widget */
+  transform-origin: 0 0; /* Adjust the origin to ensure scaling from top-left */
+}
+
+@media (max-width: 399px) {
+  .recaptcha-container {
+    max-width: 200px; /* Reduce max width for smaller screens */
+    transform: scale(0.9); /* Adjust the scaling accordingly */
+  }
+}
+
+@media (min-width: 400px) {
+  .recaptcha-container {
+    max-width: auto; /* Set the max width */
+    transform: scale(1); /* Ensure consistent scaling on larger screens */
+  }
+}
+
 /* Sign In Button */
 .sign-in-button {
   background-color: var(--color-primary-dark);
@@ -237,7 +342,7 @@ input[type="text"] ~ .password-visibility-label .hide-password {
   cursor: pointer;
   display: block;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 16px;
   transition: 0.4s ease;
   width: 100%;
@@ -255,7 +360,6 @@ input[type="text"] ~ .password-visibility-label .hide-password {
   font-size: 16px;
 }
 
-/* Sign In Text */
 .sign-in-text {
   color: var(--color-primary-dark);
   text-decoration: none;
